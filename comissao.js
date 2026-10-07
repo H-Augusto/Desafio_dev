@@ -5,7 +5,7 @@
 
     */
 
-    let vendas = [
+    const vendas = [
     { "vendedor": "João Silva", "valor": 1200.50 },
     { "vendedor": "João Silva", "valor": 950.75 },
     { "vendedor": "João Silva", "valor": 1800.00 },
@@ -67,5 +67,6 @@
         return comissoes;
     }
 
-    const resultadoComissoes = calcularComissao(vendas);
-    console.log(resultadoComissoes);
+    Object.entries(resultadoComissoes).forEach(([vendedor, total]) => {
+    console.log(`${vendedor}: R$ ${total.toFixed(2)}`);
+    });
